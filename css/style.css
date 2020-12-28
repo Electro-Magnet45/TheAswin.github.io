@@ -15,6 +15,12 @@
 }
 /*=========== SCROLL-BAR ENDING =============*/
 
+/*=========== SMOOTH SCROLLING STARTING ==============*/
+html {
+  scroll-behavior: smooth;
+}
+/*=========== SMOOTH SCROLLING ENDING ==============*/
+
 /*=====  HOME PAGE STARTING ===== */
 /*========= HOME SECTION STARTING =========*/
 body {
@@ -178,16 +184,17 @@ a:hover {
 
 .aboutSection .aboutHeadDiv #aboutHead {
   position: relative;
+  color: aqua;
   font-family: "Poppins", sans-serif;
   font-size: 56px;
   line-height: 53px;
   margin: 0;
   font-weight: normal;
-  color: white;
   letter-spacing: 0rem;
 }
 
 .aboutSection .aboutHeadDiv #aboutHead span {
+  color: aqua !important;
   font-weight: bold;
   animation-duration: 1s;
   animation-fill-mode: both;

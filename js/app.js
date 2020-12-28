@@ -13,9 +13,9 @@ $(function () {
   $("#navAbout").css("visibility", "hidden");
   $("#navContact").css("visibility", "hidden");
 
-  var a = 0;
-
   $("#logo-Img").addClass("animate__tada");
+
+  var a = 0;
 
   $(".blast").each(function () {
     $(this).hide();
@@ -103,9 +103,48 @@ $(function () {
         }
       );
     });
-
-    $("#aboutHead span").mouseleave(function () {
-      $(this).css("color", "white");
-    });
   }, 2000);
+
+  /*============= CHECK AND THEN ANIMATE ===============*/
+  $(window).scroll(function () {
+    var top_of_element = $("#aboutHead").offset().top;
+    var bottom_of_element =
+      $("#aboutHead").offset().top + $("#aboutHead").outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+    var top_of_screen = $(window).scrollTop();
+
+    if (
+      bottom_of_screen > top_of_element &&
+      top_of_screen < bottom_of_element
+    ) {
+      var a = 0;
+
+      $("#aboutHead span").each(function () {
+        if (a == 300) {
+          a = 400;
+        }
+
+        if (a == 1100) {
+          a = 1200;
+        }
+
+        var el = $(this);
+        setTimeout(function () {
+          el.removeClass("blast").addClass("animate__bounceIn");
+        }, a);
+
+        if (a < 1200) {
+          a = a + 100;
+        } else {
+          a = a + 80;
+        }
+      });
+
+      setTimeout(function () {
+        $(".animate__bounceIn").each(function () {
+          $(this).removeClass("animate__bounceIn").addClass("blast");
+        });
+      }, 3000);
+    }
+  });
 });
