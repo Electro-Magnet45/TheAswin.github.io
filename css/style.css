@@ -1,3 +1,20 @@
+/*=========== SCROLL-BAR STARTING =============*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20%;
+  background: aqua;
+}
+/*=========== SCROLL-BAR ENDING =============*/
+
 /*=====  HOME PAGE STARTING ===== */
 /*========= HOME SECTION STARTING =========*/
 body {
